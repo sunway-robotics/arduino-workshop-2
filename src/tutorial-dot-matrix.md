@@ -34,7 +34,7 @@ Dot matrix is a matrix of LEDs in which the LEDs are arranged in rows and column
     }
     ```
 
-4. The dot matrix is controlled with the `displaybuffer` array. Each item in the array represents a column counting from left to right (?) starting from 0.
+4. The dot matrix is controlled with the `displaybuffer` array. Each item in the array represents a column counting from right to left starting from 0.
 
     We use binary code for each item in the array with 1 being on and 0 being off for the LEDs. To set the middle two columns to light up, we will have
     
@@ -144,6 +144,7 @@ Dot matrix is a matrix of LEDs in which the LEDs are arranged in rows and column
         dm_right();
         delay(1500);
     }
+    ```
 
 # Bring it further
 1. How can we display an animation of arrow moving?

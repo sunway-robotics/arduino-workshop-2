@@ -364,7 +364,7 @@
 </td></tr></table>
 </li>
 <li>
-<p>The dot matrix is controlled with the <code>displaybuffer</code> array. Each item in the array represents a column counting from left to right (?) starting from 0.</p>
+<p>The dot matrix is controlled with the <code>displaybuffer</code> array. Each item in the array represents a column counting from right to left starting from 0.</p>
 <p>We use binary code for each item in the array with 1 being on and 0 being off for the LEDs. To set the middle two columns to light up, we will have</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="n">matrix</span><span class="p">.</span><span class="n">displaybuffer</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">B00000000</span><span class="p">;</span><span class="w"></span>
@@ -459,17 +459,17 @@
 <a id="__codelineno-3-69" name="__codelineno-3-69" href="#__codelineno-3-69"></a><span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <p>Then in the <code>loop</code> function, we can call the functions to display the patterns on the dot matrix.</p>
-<p>```c++
-void loop() {
-    dm_forward();
-    delay(1500);
-    dm_backward();
-    delay(1500);
-    dm_left();
-    delay(1500);
-    dm_right();
-    delay(1500);
-}</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="n">dm_forward</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">1500</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="n">dm_backward</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">1500</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="n">dm_left</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">1500</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="n">dm_right</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">1500</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
 </li>
 </ol>
 <h1 id="bring-it-further">Bring it further</h1>
